@@ -37,7 +37,7 @@ export default function Home() {
         <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
           <h3 className="font-semibold text-blue-800 mb-2">📚 学习进度</h3>
           <p className="text-blue-700">
-            ✅ JSX/TSX语法 → ✅ 状态管理(useState) → ✅ 条件渲染和列表渲染 → ✅ 组件通信&生命周期 → ✅ Next.js路由系统
+            ✅ JSX/TSX语法 → ✅ 状态管理(useState) → ✅ 条件渲染和列表渲染 → ✅ 组件通信&生命周期 → ✅ Next.js路由系统 → 🔄 数据获取&渲染策略
           </p>
         </div>
         
@@ -186,6 +186,123 @@ app.use(router)`}
             <li>• <strong>嵌套路由</strong>：支持复杂的路由结构</li>
             <li>• <strong>中间件支持</strong>：可以添加路由级别的逻辑</li>
           </ul>
+        </div>
+      </div>
+      
+      {/* Next.js数据获取演示 */}
+      <div className="mt-8 bg-white rounded-lg shadow-lg p-8">
+        <h2 className="text-2xl font-bold mb-6 text-orange-600">
+          🔄 Next.js数据获取与渲染策略演示
+        </h2>
+        
+        <div className="bg-orange-50 border border-orange-200 p-4 rounded-lg mb-6">
+          <h3 className="font-semibold text-orange-800 mb-2">
+            🎯 全新的数据获取方式 - 不只是客户端！
+          </h3>
+          <p className="text-orange-700">
+            Vue主要使用客户端渲染，而Next.js提供了多种渲染策略：
+            CSR(客户端渲染)、SSR(服务端渲染)、SSG(静态生成)、ISR(增量静态再生)
+          </p>
+        </div>
+        
+        <div className="grid md:grid-cols-3 gap-6 mb-8">
+          <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
+            <h3 className="text-xl font-semibold text-blue-800 mb-3">
+              🔄 客户端渲染 (CSR)
+            </h3>
+            <p className="text-blue-700 mb-4">
+              类似Vue的传统方式，数据在浏览器中通过JavaScript获取
+            </p>
+            <div className="text-sm text-blue-600 mb-4 space-y-1">
+              <p>• 先显示页面框架，再加载数据</p>
+              <p>• 用户会看到明显的加载状态</p>
+              <p>• 与Vue的开发体验类似</p>
+            </div>
+            <a 
+              href="/blog-csr" 
+              className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              体验CSR演示 →
+            </a>
+          </div>
+          
+          <div className="bg-green-50 p-6 rounded-lg border border-green-200">
+            <h3 className="text-xl font-semibold text-green-800 mb-3">
+              🚀 服务端渲染 (SSR)
+            </h3>
+            <p className="text-green-700 mb-4">
+              Next.js的核心特性，数据在服务端获取后返回完整页面
+            </p>
+            <div className="text-sm text-green-600 mb-4 space-y-1">
+              <p>• 没有加载状态，直接显示完整内容</p>
+              <p>• 首屏更快，SEO友好</p>
+              <p>• Vue需要Nuxt.js才有类似功能</p>
+            </div>
+            <a 
+              href="/blog-ssr" 
+              className="inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
+            >
+              体验SSR演示 →
+            </a>
+          </div>
+          
+          <div className="bg-purple-50 p-6 rounded-lg border border-purple-200">
+            <h3 className="text-xl font-semibold text-purple-800 mb-3">
+              🏗️ 静态生成 (SSG)
+            </h3>
+            <p className="text-purple-700 mb-4">
+              构建时生成静态HTML文件，访问速度最快
+            </p>
+            <div className="text-sm text-purple-600 mb-4 space-y-1">
+              <p>• 构建时获取数据生成静态页面</p>
+              <p>• 访问速度最快，CDN友好</p>
+              <p>• Vue生态中较少见的特性</p>
+            </div>
+            <a 
+              href="/blog-ssg" 
+              className="inline-block bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors"
+            >
+              体验SSG演示 →
+            </a>
+          </div>
+        </div>
+        
+        <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg mb-6">
+          <h3 className="font-semibold text-yellow-800 mb-3">
+            🎯 体验建议
+          </h3>
+          <ol className="text-yellow-700 space-y-2 text-sm">
+            <li><strong>第一步:</strong> 先访问CSR版本，观察加载过程和控制台日志</li>
+            <li><strong>第二步:</strong> 再访问SSR版本，感受无加载状态的体验</li>
+            <li><strong>第三步:</strong> 对比两种方式的页面加载速度差异</li>
+            <li><strong>第四步:</strong> 使用浏览器开发者工具查看Network面板的请求时序</li>
+          </ol>
+        </div>
+        
+        <div className="bg-purple-50 border border-purple-200 p-4 rounded-lg">
+          <h3 className="font-semibold text-purple-800 mb-2">
+            💡 核心差异总结
+          </h3>
+          <div className="grid md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <h4 className="font-medium text-purple-700 mb-2">Vue应用 (主要CSR)</h4>
+              <ul className="text-purple-600 space-y-1">
+                <li>• 客户端渲染为主</li>
+                <li>• 需要Nuxt.js才有SSR</li>
+                <li>• onMounted中获取数据</li>
+                <li>• SEO需要额外配置</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-medium text-purple-700 mb-2">Next.js应用 (多种选择)</h4>
+              <ul className="text-purple-600 space-y-1">
+                <li>• 原生支持多种渲染策略</li>
+                <li>• SSR开箱即用</li>
+                <li>• 服务端组件自动SSR</li>
+                <li>• SEO天然友好</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
       
