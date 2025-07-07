@@ -22,6 +22,73 @@
 | **跨组件通信** | `provide/inject` | `Context API` |
 | **全局状态** | `Vuex/Pinia` | `Redux/Zustand` |
 
+### 🎯 核心设计理念差异
+
+#### Vue的事件驱动模式 (Event-driven)
+```vue
+<!-- 子组件拥有状态，通过事件通知父组件 -->
+<template>
+  <input v-model="localValue" @input="notifyParent" />
+</template>
+
+<script setup>
+const localValue = ref('')
+const emit = defineEmits(['valueChange'])
+
+const notifyParent = () => {
+  // 1. 子组件先更新自己的数据
+  // 2. 然后"通知"父组件发生了变化
+  emit('valueChange', localValue.value)
+}
+</script>
+```
+
+#### React的回调函数模式 (Callback-based)
+```tsx
+// 父组件拥有状态，子组件通过回调"请求"更新
+interface InputProps {
+  value: string
+  onChange: (newValue: string) => void
+}
+
+function Input({ value, onChange }: InputProps) {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // 直接调用父组件的函数来"请求"更新数据
+    onChange(e.target.value)
+  }
+  
+  return <input value={value} onChange={handleChange} />
+}
+```
+
+### 设计理念对比
+
+设计理念分析
+1. 数据所有权
+Vue: 子组件可以拥有自己的状态，通过事件通知父组件
+React: 数据通常由父组件拥有，子组件只是"展示"数据
+2. 数据流方向
+Vue: 双向数据流感觉更自然（v-model、emit）
+React: 严格的单向数据流（数据向下，事件向上）
+3. 编程范式
+Vue: 面向对象 + 事件驱动，更接近传统的GUI编程
+React: 函数式编程，数据和行为分离
+
+| 方面 | Vue事件模式 | React回调模式 |
+|------|-------------|---------------|
+| **数据所有权** | 子组件可以拥有状态 | 状态通常在父组件 |
+| **数据流感觉** | 双向数据流更自然 | 严格单向数据流 |
+| **编程范式** | 面向对象+事件驱动 | 函数式编程 |
+| **状态管理** | 分散式，组件各自管理 | 集中式，状态提升 |
+| **调试体验** | 事件可能跳跃式传播 | 数据流清晰可追踪 |
+| **代码组织** | 更接近传统GUI编程 | 数据和行为分离 |
+
+**优势分析:**
+- ✅ **Vue事件模式**: 更符合直觉，组件独立性强，双向绑定方便
+- ✅ **React回调模式**: 数据流清晰，状态可预测，函数式编程优雅
+- ❌ **Vue事件模式**: 大型应用中事件传播可能复杂
+- ❌ **React回调模式**: 需要状态提升，组件耦合度相对较高
+
 ### Vue生命周期 vs React生命周期
 
 | Vue生命周期钩子 | React useEffect等价 | 说明 |
