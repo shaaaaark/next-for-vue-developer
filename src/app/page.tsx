@@ -1,6 +1,7 @@
 import Image from "next/image";
 import StateDemo from '@/components/StateDemo';
 import ConditionalAndListDemo from '@/components/ConditionalAndListDemo';
+import ComponentCommunicationDemo from '@/components/ComponentCommunicationDemo';
 
 export default function Home() {
   const title = "从Vue到Next.js的学习之旅";
@@ -36,7 +37,7 @@ export default function Home() {
         <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
           <h3 className="font-semibold text-blue-800 mb-2">📚 学习进度</h3>
           <p className="text-blue-700">
-            ✅ JSX/TSX语法 → ✅ 状态管理(useState) → ✅ 条件渲染和列表渲染 → 🔄 Next.js路由系统
+            ✅ JSX/TSX语法 → ✅ 状态管理(useState) → ✅ 条件渲染和列表渲染 → ✅ 组件通信&生命周期 → ✅ Next.js路由系统
           </p>
         </div>
         
@@ -71,6 +72,11 @@ export default function Home() {
       {/* 条件渲染和列表渲染演示 */}
       <div className="mt-8">
         <ConditionalAndListDemo />
+      </div>
+      
+      {/* 组件间通信和生命周期演示 */}
+      <div className="mt-8">
+        <ComponentCommunicationDemo />
       </div>
       
       {/* Next.js路由系统演示 */}
@@ -186,9 +192,9 @@ app.use(router)`}
       {/* 学习总结 */}
       <div className="mt-8 bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-lg text-center">
         <h3 className="text-xl font-semibold mb-3 text-gray-800">
-          🎉 恭喜！你已经掌握了React的核心概念
+          🎉 恭喜！你已经掌握了React/Next.js的核心概念
         </h3>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4 mb-4">
           <div className="bg-white p-3 rounded shadow">
             <h4 className="font-medium text-green-600">✅ JSX/TSX</h4>
             <p className="text-sm text-gray-600">类型安全的模板语法</p>
@@ -200,6 +206,10 @@ app.use(router)`}
           <div className="bg-white p-3 rounded shadow">
             <h4 className="font-medium text-purple-600">✅ 条件&列表渲染</h4>
             <p className="text-sm text-gray-600">JavaScript表达式控制UI</p>
+          </div>
+          <div className="bg-white p-3 rounded shadow">
+            <h4 className="font-medium text-orange-600">✅ 组件通信&生命周期</h4>
+            <p className="text-sm text-gray-600">props/回调函数 + useEffect</p>
           </div>
           <div className="bg-white p-3 rounded shadow">
             <h4 className="font-medium text-indigo-600">✅ Next.js路由</h4>
