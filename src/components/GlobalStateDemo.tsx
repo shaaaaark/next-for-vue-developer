@@ -25,7 +25,7 @@ export default function GlobalStateDemo() {
   const handleLogin = () => {
     if (loginForm.name && loginForm.email) {
       login({
-        id: Date.now().toString(),
+        id: Math.random().toString(36).substring(2), // 避免hydration问题
         name: loginForm.name,
         email: loginForm.email
       });

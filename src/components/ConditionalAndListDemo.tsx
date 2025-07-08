@@ -40,9 +40,10 @@ export default function ConditionalAndListDemo() {
 
   // 添加新todo
   const addTodo = () => {
+    const randomId = Math.floor(Math.random() * 10000); // 避免hydration问题
     const newTodo: TodoItem = {
-      id: Date.now(),
-      text: `新任务 ${Date.now()}`,
+      id: randomId,
+      text: `新任务 ${randomId}`,
       completed: false
     };
     setTodos([...todos, newTodo]);

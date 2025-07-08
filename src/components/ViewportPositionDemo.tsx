@@ -14,7 +14,7 @@ export default function ViewportPositionDemo() {
   const [currentPosition, setCurrentPosition] = useState({ x: 0, y: 0 });
   const [autoSaveEnabled, setAutoSaveEnabled] = useState(false);
 
-  // 实时更新当前滚动位置
+  // 定时更新当前滚动位置（避免滚动冲突）
   useEffect(() => {
     const updatePosition = () => {
       setCurrentPosition({
@@ -23,8 +23,9 @@ export default function ViewportPositionDemo() {
       });
     };
 
-    window.addEventListener('scroll', updatePosition);
-    return () => window.removeEventListener('scroll', updatePosition);
+    // 使用定时器而不是滚动监听器，避免冲突
+    const interval = setInterval(updatePosition, 500);
+    return () => clearInterval(interval);
   }, []);
 
   // 自动保存功能
@@ -40,22 +41,19 @@ export default function ViewportPositionDemo() {
     return new Date(timestamp).toLocaleString('zh-CN');
   };
 
-  // 生成长内容用于滚动测试
-  const generateLongContent = () => {
+  // 生成简化的测试内容
+  const generateTestContent = () => {
     const sections = [];
-    for (let i = 1; i <= 20; i++) {
+    for (let i = 1; i <= 8; i++) {
       sections.push(
-        <div key={i} className="mb-8 p-6 bg-white border border-gray-200 rounded-lg">
+        <div key={i} className="mb-6 p-4 bg-white border border-gray-200 rounded-lg">
           <h4 className="text-lg font-semibold text-gray-800 mb-3">
             📖 测试章节 {i}
           </h4>
-          <p className="text-gray-600 leading-relaxed mb-4">
-            这是第 {i} 个测试章节的内容。你可以滚动到这里，然后刷新页面来测试位置保存功能。
-            在真实项目中，这可能是文章内容、商品列表、用户评论等需要保持浏览位置的内容。
+          <p className="text-gray-600 leading-relaxed mb-2">
+            这是第 {i} 个测试章节的内容。你可以滚动到这里测试位置保存功能。
           </p>
-          <div className="flex gap-2 text-sm text-gray-500">
-            <span>当前位置: Y轴 {currentPosition.y}px</span>
-            <span>|</span>
+          <div className="text-sm text-gray-500">
             <span>章节 ID: section-{i}</span>
           </div>
         </div>
@@ -67,7 +65,7 @@ export default function ViewportPositionDemo() {
   return (
     <div className="space-y-8">
       {/* 功能说明和控制面板 */}
-      <div className="sticky top-0 bg-white/95 backdrop-blur-sm border border-gray-200 rounded-lg p-6 shadow-sm">
+      <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
         <div className="border-b border-gray-200 pb-4 mb-6">
           <h3 className="text-xl font-semibold text-gray-900 mb-2">
             📍 视口位置管理演示
@@ -165,7 +163,7 @@ useEffect(() => startAutoSave(), [])`}
             </div>
             <div className="bg-gray-50 p-3 rounded">
               <div className="font-medium text-gray-700">保存时间</div>
-              <div className="text-gray-600 text-xs">
+              <div className="text-gray-600 text-xs" suppressHydrationWarning>
                 {formatTime(viewportPosition.timestamp)}
               </div>
             </div>
@@ -231,7 +229,7 @@ useEffect(() => startAutoSave(), [])`}
         <h3 className="text-lg font-semibold text-gray-800 border-b border-gray-200 pb-2">
           📚 测试内容区域（向下滚动进行测试）
         </h3>
-        {generateLongContent()}
+        {generateTestContent()}
       </div>
 
       {/* 底部说明 */}

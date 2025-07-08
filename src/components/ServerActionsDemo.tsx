@@ -58,7 +58,7 @@ export default function ServerActionsDemo() {
             用户 <code className="bg-white px-2 py-1 rounded border border-gray-200">{userId}</code> 
             的状态已更新为 <code className="bg-white px-2 py-1 rounded border border-gray-200">{status}</code>
           </p>
-          <p className="text-gray-600 text-xs mt-1">
+          <p className="text-gray-600 text-xs mt-1" suppressHydrationWarning>
             操作时间: {new Date(parseInt(timestamp || '0')).toLocaleString()}
           </p>
         </div>
