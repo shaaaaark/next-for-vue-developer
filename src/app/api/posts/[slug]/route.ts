@@ -197,7 +197,7 @@ export async function PUT(
       success: true,
       data: posts[postIndex]
     })
-  } catch (error) {
+  } catch (_error) {
     return NextResponse.json(
       { 
         success: false, 
