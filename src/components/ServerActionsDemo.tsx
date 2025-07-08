@@ -50,15 +50,15 @@ export default function ServerActionsDemo() {
 
       {/* 操作反馈显示 */}
       {action === 'update' && userId && status && (
-        <div className="mb-6 bg-green-50 border border-green-200 rounded-lg p-4">
-          <h3 className="font-semibold text-green-800 mb-2">
-            ✅ 操作成功！
+        <div className="mb-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 className="font-semibold text-blue-800 mb-2">
+            操作成功
           </h3>
-          <p className="text-green-700 text-sm">
-            用户 <code className="bg-green-100 px-2 py-1 rounded">{userId}</code> 
-            的状态已更新为 <code className="bg-green-100 px-2 py-1 rounded">{status}</code>
+          <p className="text-blue-700 text-sm">
+            用户 <code className="bg-white px-2 py-1 rounded border border-gray-200">{userId}</code> 
+            的状态已更新为 <code className="bg-white px-2 py-1 rounded border border-gray-200">{status}</code>
           </p>
-          <p className="text-green-600 text-xs mt-1">
+          <p className="text-gray-600 text-xs mt-1">
             操作时间: {new Date(parseInt(timestamp || '0')).toLocaleString()}
           </p>
         </div>
@@ -189,7 +189,7 @@ import { createUser } from '@/actions/form-actions'
           </form>
         </div>
 
-        {/* 状态更新表单 - 改进版 */}
+        {/* 状态更新表单 - 统一颜色版 */}
         <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
           <h3 className="text-lg font-semibold mb-4">演示2：快速操作（单个字段）</h3>
           
@@ -199,12 +199,7 @@ import { createUser } from '@/actions/form-actions'
             <div className="flex items-center space-x-2">
               <span className="text-sm text-gray-600">用户ID: user-123</span>
               <span className="text-sm">•</span>
-              <span className={`text-sm font-medium ${
-                userStatus === '已激活' ? 'text-green-600' :
-                userStatus === '已暂停' ? 'text-yellow-600' :
-                userStatus === '已删除' ? 'text-red-600' :
-                'text-gray-600'
-              }`}>
+              <span className="text-sm font-medium text-blue-600">
                 状态: {userStatus}
               </span>
             </div>
@@ -217,9 +212,9 @@ import { createUser } from '@/actions/form-actions'
               <input type="hidden" name="currentUrl" value={currentUrl} />
               <button
                 type="submit"
-                className="w-full bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
+                className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
               >
-                ✅ 激活用户
+                激活用户
               </button>
             </form>
 
@@ -229,9 +224,9 @@ import { createUser } from '@/actions/form-actions'
               <input type="hidden" name="currentUrl" value={currentUrl} />
               <button
                 type="submit"
-                className="w-full bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition-colors"
+                className="w-full bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors"
               >
-                ⏸️ 暂停用户
+                暂停用户
               </button>
             </form>
 
@@ -241,16 +236,16 @@ import { createUser } from '@/actions/form-actions'
               <input type="hidden" name="currentUrl" value={currentUrl} />
               <button
                 type="submit"
-                className="w-full bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors"
+                className="w-full bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors"
               >
-                🗑️ 删除用户
+                删除用户
               </button>
             </form>
           </div>
           
           <div className="mt-4 p-3 bg-blue-50 rounded border border-blue-200">
             <p className="text-sm text-blue-700">
-              <strong>💡 实时反馈：</strong> 点击按钮后，页面会刷新并显示操作结果。
+              <strong>实时反馈：</strong> 点击按钮后，页面会刷新并显示操作结果。
               这展示了Server Actions如何提供用户反馈！
             </p>
           </div>
@@ -283,7 +278,7 @@ import { createUser } from '@/actions/form-actions'
         
         <div className="mt-4 p-3 bg-white rounded border border-blue-200">
           <p className="text-sm text-gray-700">
-            <strong>💡 反馈机制：</strong> Server Actions可以通过重定向、URL参数、数据库状态等方式提供用户反馈。
+            <strong>反馈机制：</strong> Server Actions可以通过重定向、URL参数、数据库状态等方式提供用户反馈。
             这比传统的API调用 + 状态管理更简洁！
           </p>
         </div>
