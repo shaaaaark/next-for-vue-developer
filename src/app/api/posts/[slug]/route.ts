@@ -113,25 +113,20 @@ const [user, setUser] = useState<User | null>(null) // User | null
   }
 ]
 
-interface RouteParams {
-  params: {
-    slug: string
-  }
-}
-
 // GET /api/posts/[slug] - 根据slug获取单个文章
 export async function GET(
   request: NextRequest,
-  { params }: RouteParams
+  { params }: { params: Promise<{ slug: string }> }
 ) {
   try {
-    console.log('🔍 查找文章:', params.slug)
+    const { slug } = await params
+    console.log('🔍 查找文章:', slug)
     
     // 模拟API延迟
     await new Promise(resolve => setTimeout(resolve, 300))
     
     // 查找文章
-    const post = posts.find(p => p.slug === params.slug)
+    const post = posts.find(p => p.slug === slug)
     
     if (!post) {
       return NextResponse.json(
@@ -167,11 +162,12 @@ export async function GET(
 // PUT /api/posts/[slug] - 更新文章
 export async function PUT(
   request: NextRequest,
-  { params }: RouteParams
+  { params }: { params: Promise<{ slug: string }> }
 ) {
   try {
+    const { slug } = await params
     const body = await request.json()
-    const postIndex = posts.findIndex(p => p.slug === params.slug)
+    const postIndex = posts.findIndex(p => p.slug === slug)
     
     if (postIndex === -1) {
       return NextResponse.json(
