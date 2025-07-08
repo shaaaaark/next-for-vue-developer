@@ -5,6 +5,9 @@ import { useState, useEffect } from 'react';
 import StateDemo from '@/components/StateDemo';
 import ConditionalAndListDemo from '@/components/ConditionalAndListDemo';
 import ComponentCommunicationDemo from '@/components/ComponentCommunicationDemo';
+import FormBasicsDemo from '@/components/FormBasicsDemo';
+import ServerActionsDemo from '@/components/ServerActionsDemo';
+import FormValidationDemo from '@/components/FormValidationDemo';
 
 // 导航项配置 - 简化图标使用
 const navigationItems = [
@@ -16,6 +19,7 @@ const navigationItems = [
   { id: 'communication-demo', title: '组件通信&生命周期' },
   { id: 'routing-demo', title: '路由系统' },
   { id: 'data-fetching-demo', title: '数据获取' },
+  { id: 'forms-demo', title: '表单处理' },
   { id: 'summary', title: '学习总结' },
 ];
 
@@ -428,13 +432,53 @@ app.use(router)`}
             </div>
           </section>
           
+          {/* 表单处理演示 */}
+          <section id="forms-demo" className="mb-16">
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <h2 className="text-2xl font-bold mb-6 text-blue-600">
+                第七章：表单处理和数据变更
+              </h2>
+              
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                <h3 className="font-semibold text-blue-800 mb-2">
+                  Next.js表单处理革命性特性
+                </h3>
+                <p className="text-blue-700 text-sm">
+                  学习Server Actions、Zod验证和现代表单处理技术。
+                  这是Vue开发者转向Next.js时最令人兴奋的特性之一！
+                </p>
+              </div>
+              
+              <div className="space-y-8">
+                <FormBasicsDemo />
+                <ServerActionsDemo />
+                <FormValidationDemo />
+              </div>
+              
+              <div className="mt-8 bg-blue-50 border border-blue-200 p-4 rounded-lg">
+                <h3 className="font-semibold text-blue-800 mb-2">
+                  完整表单页面演示
+                </h3>
+                <p className="text-blue-700 text-sm mb-3">
+                  想要体验完整的表单处理流程？访问独立的表单演示页面：
+                </p>
+                <a 
+                  href="/forms" 
+                  className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                >
+                  访问表单演示页面 →
+                </a>
+              </div>
+            </div>
+          </section>
+          
           {/* 学习总结 */}
           <section id="summary" className="mb-16">
             <div className="bg-white rounded-lg shadow-lg p-8">
               <h3 className="text-xl font-semibold mb-3 text-blue-600 text-center">
                 恭喜！你已经掌握了React/Next.js的核心概念
               </h3>
-              <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4 mb-4">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
                 <div className="bg-gray-50 p-3 rounded border border-gray-200">
                   <h4 className="font-medium text-blue-600">JSX/TSX</h4>
                   <p className="text-sm text-gray-600">类型安全的模板语法</p>
@@ -455,10 +499,18 @@ app.use(router)`}
                   <h4 className="font-medium text-blue-600">Next.js路由</h4>
                   <p className="text-sm text-gray-600">文件系统路由</p>
                 </div>
+                <div className="bg-gray-50 p-3 rounded border border-gray-200">
+                  <h4 className="font-medium text-blue-600">数据获取</h4>
+                  <p className="text-sm text-gray-600">CSR/SSR/SSG多种策略</p>
+                </div>
+                <div className="bg-gray-50 p-3 rounded border border-gray-200">
+                  <h4 className="font-medium text-blue-600">表单处理</h4>
+                  <p className="text-sm text-gray-600">Server Actions + Zod验证</p>
+                </div>
               </div>
               <p className="text-gray-600 mb-4 text-center">
-                太棒了！你已经掌握了从React基础到Next.js路由系统的核心概念。
-                接下来可以学习更多Next.js的高级特性，比如数据获取、API路由、服务端渲染等。
+                太棒了！你已经掌握了从React基础到Next.js表单处理的核心概念。
+                这包括了现代全栈开发的重要技能：Server Actions、类型安全验证、多种渲染策略等。
               </p>
               <div className="text-center">
                 <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
