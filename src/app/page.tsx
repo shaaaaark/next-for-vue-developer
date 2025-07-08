@@ -504,12 +504,20 @@ app.use(router)`}
                 <p className="text-blue-700 text-sm mb-3">
                   想要体验完整的全局状态管理？访问独立的演示页面：
                 </p>
-                <a 
-                  href="/state-management" 
-                  className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                  访问状态管理演示页面 →
-                </a>
+                <div className="flex gap-3">
+                  <a 
+                    href="/state-management" 
+                    className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                  >
+                    状态管理演示 →
+                  </a>
+                  <a 
+                    href="/scroll-demo" 
+                    className="inline-block bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors"
+                  >
+                    全局滚动演示 →
+                  </a>
+                </div>
               </div>
             </div>
           </section>
