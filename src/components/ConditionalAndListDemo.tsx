@@ -55,15 +55,15 @@ export default function ConditionalAndListDemo() {
 
   return (
     <div className="bg-white p-6 rounded-lg shadow-lg">
-      <h3 className="text-2xl font-bold mb-6 text-rose-600">
+      <h3 className="text-2xl font-bold mb-6 text-blue-600">
         条件渲染和列表渲染演示
       </h3>
 
       {/* 语法对比说明 */}
       <div className="grid md:grid-cols-2 gap-6 mb-8">
-        <div className="bg-green-50 p-4 rounded-lg">
-          <h4 className="font-semibold text-green-800 mb-3">Vue模板指令</h4>
-          <pre className="text-sm text-green-700 overflow-x-auto">
+        <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+          <h4 className="font-semibold text-gray-800 mb-3">Vue模板指令</h4>
+          <pre className="text-sm text-gray-700 overflow-x-auto">
 {`<!-- 条件渲染 -->
 <div v-if="showWelcome">欢迎</div>
 <div v-else-if="userRole === 'admin'">管理员</div>
@@ -78,9 +78,9 @@ export default function ConditionalAndListDemo() {
           </pre>
         </div>
 
-        <div className="bg-rose-50 p-4 rounded-lg">
-          <h4 className="font-semibold text-rose-800 mb-3">React JSX表达式</h4>
-          <pre className="text-sm text-rose-700 overflow-x-auto">
+        <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+          <h4 className="font-semibold text-blue-800 mb-3">React JSX表达式</h4>
+          <pre className="text-sm text-blue-700 overflow-x-auto">
 {`{/* 条件渲染 */}
 {showWelcome && <div>欢迎</div>}
 {userRole === 'admin' ? <div>管理员</div> : <div>游客</div>}
@@ -101,23 +101,23 @@ export default function ConditionalAndListDemo() {
       <div className="space-y-8">
         
         {/* 条件渲染演示 */}
-        <div className="bg-gray-50 p-6 rounded-lg">
-          <h4 className="text-lg font-semibold mb-4">🔄 条件渲染演示</h4>
+        <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+          <h4 className="text-lg font-semibold mb-4">条件渲染演示</h4>
           
           <div className="space-y-4">
             {/* v-if 等效演示 */}
             <div>
               <button 
                 onClick={() => setShowWelcome(!showWelcome)}
-                className="bg-blue-500 text-white px-4 py-2 rounded mr-4 hover:bg-blue-600"
+                className="bg-blue-600 text-white px-4 py-2 rounded mr-4 hover:bg-blue-700"
               >
                 {showWelcome ? '隐藏' : '显示'}欢迎消息
               </button>
               
               {/* React条件渲染：{condition && <element>} */}
               {showWelcome && (
-                <div className="bg-blue-100 p-3 rounded inline-block">
-                  🎉 欢迎学习React！(类似v-if="showWelcome")
+                <div className="bg-blue-50 p-3 rounded inline-block border border-blue-200">
+                  欢迎学习React！(类似v-if="showWelcome")
                 </div>
               )}
             </div>
@@ -140,18 +140,18 @@ export default function ConditionalAndListDemo() {
               {/* React多重条件：三元运算符嵌套或多个条件 */}
               <div className="space-y-2">
                 {userRole === 'admin' && (
-                  <div className="bg-red-100 p-3 rounded">
-                    🔑 管理员面板 (类似v-if="userRole === 'admin'")
+                  <div className="bg-blue-50 p-3 rounded border border-blue-200">
+                    管理员面板 (类似v-if="userRole === 'admin'")
                   </div>
                 )}
                 {userRole === 'user' && (
-                  <div className="bg-green-100 p-3 rounded">
-                    👤 用户仪表板 (类似v-else-if="userRole === 'user'")
+                  <div className="bg-gray-100 p-3 rounded border border-gray-200">
+                    用户仪表板 (类似v-else-if="userRole === 'user'")
                   </div>
                 )}
                 {userRole === 'guest' && (
-                  <div className="bg-yellow-100 p-3 rounded">
-                    🚪 请先登录 (类似v-else)
+                  <div className="bg-gray-50 p-3 rounded border border-gray-200">
+                    请先登录 (类似v-else)
                   </div>
                 )}
               </div>
@@ -160,8 +160,8 @@ export default function ConditionalAndListDemo() {
         </div>
 
         {/* 列表渲染演示 */}
-        <div className="bg-gray-50 p-6 rounded-lg">
-          <h4 className="text-lg font-semibold mb-4">📋 列表渲染演示（类似v-for）</h4>
+        <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+          <h4 className="text-lg font-semibold mb-4">列表渲染演示（类似v-for）</h4>
           
           {/* Todo列表 */}
           <div className="mb-6">
@@ -169,7 +169,7 @@ export default function ConditionalAndListDemo() {
               <h5 className="font-semibold">Todo列表</h5>
               <button 
                 onClick={addTodo}
-                className="bg-green-500 text-white px-3 py-1 rounded text-sm hover:bg-green-600"
+                className="bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700"
               >
                 添加任务
               </button>
@@ -180,7 +180,7 @@ export default function ConditionalAndListDemo() {
               {todos.map(todo => (
                 <li 
                   key={todo.id} 
-                  className="flex items-center justify-between bg-white p-3 rounded border"
+                  className="flex items-center justify-between bg-white p-3 rounded border border-gray-200"
                 >
                   <div className="flex items-center">
                     <input 
@@ -195,7 +195,7 @@ export default function ConditionalAndListDemo() {
                   </div>
                   <button 
                     onClick={() => deleteTodo(todo.id)}
-                    className="bg-red-500 text-white px-2 py-1 rounded text-sm hover:bg-red-600"
+                    className="bg-gray-600 text-white px-2 py-1 rounded text-sm hover:bg-gray-700"
                   >
                     删除
                   </button>
@@ -222,11 +222,11 @@ export default function ConditionalAndListDemo() {
                 {users.map(user => (
                   <div 
                     key={user.id}
-                    className={`p-2 rounded border ${user.isVip ? 'bg-yellow-50 border-yellow-300' : 'bg-gray-50'}`}
+                    className={`p-2 rounded border ${user.isVip ? 'bg-blue-50 border-blue-200' : 'bg-gray-50 border-gray-200'}`}
                   >
                     <span className="font-medium">{user.name}</span>
                     <span className="text-gray-600 ml-2">({user.age}岁)</span>
-                    {user.isVip && <span className="ml-2 text-yellow-600">👑 VIP</span>}
+                    {user.isVip && <span className="ml-2 text-blue-600">VIP</span>}
                   </div>
                 ))}
               </div>
@@ -241,11 +241,11 @@ export default function ConditionalAndListDemo() {
                   .map(user => (
                     <div 
                       key={user.id}
-                      className="p-2 rounded border bg-yellow-50 border-yellow-300"
+                      className="p-2 rounded border bg-blue-50 border-blue-200"
                     >
                       <span className="font-medium">{user.name}</span>
                       <span className="text-gray-600 ml-2">({user.age}岁)</span>
-                      <span className="ml-2 text-yellow-600">👑 VIP</span>
+                      <span className="ml-2 text-blue-600">VIP</span>
                     </div>
                   ))}
               </div>
@@ -254,12 +254,12 @@ export default function ConditionalAndListDemo() {
         </div>
 
         {/* 关键差异总结 */}
-        <div className="bg-orange-50 border border-orange-200 p-4 rounded-lg">
-          <h4 className="font-semibold text-orange-800 mb-3">🔑 关键差异总结</h4>
+        <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+          <h4 className="font-semibold text-blue-800 mb-3">关键差异总结</h4>
           <div className="grid md:grid-cols-2 gap-4 text-sm">
             <div>
-              <h5 className="font-semibold text-orange-700 mb-2">Vue指令特点：</h5>
-              <ul className="text-orange-600 space-y-1">
+              <h5 className="font-semibold text-blue-700 mb-2">Vue指令特点：</h5>
+              <ul className="text-blue-600 space-y-1">
                 <li>• v-if/v-else-if/v-else 清晰</li>
                 <li>• v-for="item in items" 直观</li>
                 <li>• v-show 控制CSS显示</li>
@@ -267,8 +267,8 @@ export default function ConditionalAndListDemo() {
               </ul>
             </div>
             <div>
-              <h5 className="font-semibold text-orange-700 mb-2">React表达式特点：</h5>
-              <ul className="text-orange-600 space-y-1">
+              <h5 className="font-semibold text-blue-700 mb-2">React表达式特点：</h5>
+              <ul className="text-blue-600 space-y-1">
                 <li>• {`{condition && <element>}`} 短路运算</li>
                 <li>• {`{array.map(item => <element>)}`}</li>
                 <li>• 完全的JavaScript表达式</li>
