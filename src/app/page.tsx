@@ -8,6 +8,8 @@ import ComponentCommunicationDemo from '@/components/ComponentCommunicationDemo'
 import FormBasicsDemo from '@/components/FormBasicsDemo';
 import ServerActionsDemo from '@/components/ServerActionsDemo';
 import FormValidationDemo from '@/components/FormValidationDemo';
+import GlobalStateDemo from '@/components/GlobalStateDemo';
+import ViewportPositionDemo from '@/components/ViewportPositionDemo';
 
 // 导航项配置 - 简化图标使用
 const navigationItems = [
@@ -20,6 +22,7 @@ const navigationItems = [
   { id: 'routing-demo', title: '路由系统' },
   { id: 'data-fetching-demo', title: '数据获取' },
   { id: 'forms-demo', title: '表单处理' },
+  { id: 'global-state-demo', title: '全局状态管理' },
   { id: 'summary', title: '学习总结' },
 ];
 
@@ -149,7 +152,7 @@ export default function Home() {
               
               <div className="bg-blue-50 border-l-4 border-blue-600 p-4">
                 <p className="text-blue-700">
-                  JSX/TSX语法 → 状态管理(useState) → 条件渲染和列表渲染 → 组件通信&生命周期 → Next.js路由系统 → 数据获取&渲染策略
+                  JSX/TSX语法 → 状态管理(useState) → 条件渲染和列表渲染 → 组件通信&生命周期 → Next.js路由系统 → 数据获取&渲染策略 → 表单处理 → <strong>全局状态管理</strong>
                 </p>
               </div>
             </div>
@@ -472,6 +475,45 @@ app.use(router)`}
             </div>
           </section>
           
+          {/* 全局状态管理演示 */}
+          <section id="global-state-demo" className="mb-16">
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <h2 className="text-2xl font-bold mb-6 text-blue-600">
+                第八章：全局状态管理
+              </h2>
+              
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                <h3 className="font-semibold text-blue-800 mb-2">
+                  Zustand - Vue开发者的状态管理新选择
+                </h3>
+                <p className="text-blue-700 text-sm">
+                  学习如何使用Zustand管理全局状态，实现状态持久化，
+                  并解决页面刷新后视口位置丢失的常见问题。相比Vuex更简单、更轻量！
+                </p>
+              </div>
+              
+              <div className="space-y-8">
+                <GlobalStateDemo />
+                <ViewportPositionDemo />
+              </div>
+              
+              <div className="mt-8 bg-blue-50 border border-blue-200 p-4 rounded-lg">
+                <h3 className="font-semibold text-blue-800 mb-2">
+                  完整状态管理页面演示
+                </h3>
+                <p className="text-blue-700 text-sm mb-3">
+                  想要体验完整的全局状态管理？访问独立的演示页面：
+                </p>
+                <a 
+                  href="/state-management" 
+                  className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                >
+                  访问状态管理演示页面 →
+                </a>
+              </div>
+            </div>
+          </section>
+          
           {/* 学习总结 */}
           <section id="summary" className="mb-16">
             <div className="bg-white rounded-lg shadow-lg p-8">
@@ -507,10 +549,15 @@ app.use(router)`}
                   <h4 className="font-medium text-blue-600">表单处理</h4>
                   <p className="text-sm text-gray-600">Server Actions + Zod验证</p>
                 </div>
+                <div className="bg-gray-50 p-3 rounded border border-gray-200">
+                  <h4 className="font-medium text-blue-600">全局状态管理</h4>
+                  <p className="text-sm text-gray-600">Zustand + 状态持久化</p>
+                </div>
               </div>
               <p className="text-gray-600 mb-4 text-center">
-                太棒了！你已经掌握了从React基础到Next.js表单处理的核心概念。
-                这包括了现代全栈开发的重要技能：Server Actions、类型安全验证、多种渲染策略等。
+                太棒了！你已经掌握了从React基础到Next.js全局状态管理的核心概念。
+                这包括了现代全栈开发的重要技能：Server Actions、类型安全验证、多种渲染策略、
+                全局状态管理和视口位置保存等。
               </p>
               <div className="text-center">
                 <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
