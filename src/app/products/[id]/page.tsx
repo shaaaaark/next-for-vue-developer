@@ -2,9 +2,9 @@
 // 文件名 [id] 表示这是一个动态参数
 import Link from 'next/link';
 interface ProductDetailPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 // 模拟产品数据
@@ -14,9 +14,10 @@ const products = [
   { id: 3, name: 'Next.js完全教程', price: 159, description: '掌握全栈开发', content: '学习Next.js的所有特性和最佳实践...' },
 ];
 
-export default function ProductDetailPage({ params }: ProductDetailPageProps) {
+export default async function ProductDetailPage({ params }: ProductDetailPageProps) {
   // Next.js自动将URL中的[id]部分传递给params.id
-  const productId = parseInt(params.id);
+  const { id } = await params;
+  const productId = parseInt(id);
   const product = products.find(p => p.id === productId);
 
   // 如果产品不存在，显示404状态
@@ -25,7 +26,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="bg-white rounded-lg shadow-lg p-8 text-center">
           <h1 className="text-3xl font-bold mb-4 text-red-600">产品未找到</h1>
-          <p className="text-gray-600 mb-6">产品ID {params.id} 不存在</p>
+          <p className="text-gray-600 mb-6">产品ID {id} 不存在</p>
           <Link
             href="/products" 
             className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors inline-block"
@@ -49,11 +50,11 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
             🎯 动态路由魔法
           </h2>
           <p className="text-orange-700">
-            当前URL: <code className="bg-orange-100 px-2 py-1 rounded">/products/{params.id}</code>
+            当前URL: <code className="bg-orange-100 px-2 py-1 rounded">/products/{id}</code>
             <br />
             文件路径: <code className="bg-orange-100 px-2 py-1 rounded">src/app/products/[id]/page.tsx</code>
             <br />
-            URL参数: <code className="bg-orange-100 px-2 py-1 rounded">params.id = "{params.id}"</code>
+            URL参数: <code className="bg-orange-100 px-2 py-1 rounded">params.id = &quot;{id}&quot;</code>
           </p>
         </div>
 
