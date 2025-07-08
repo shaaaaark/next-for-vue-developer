@@ -21,8 +21,6 @@ pnpm dev
 
 ## 📚 学习路线
 
-> 📖 **参考依据**：查看 [学习路线参考依据文档](./docs/learning-roadmap-references.md) 了解每个知识点的权威来源和商用需求分析
-
 ### ✅ 已完成模块
 
 #### 第一章：JSX/TSX语法基础
