@@ -152,13 +152,13 @@ export default function Page({ params }) {
             .filter(p => p.id !== productId)
             .slice(0, 2)
             .map(p => (
-              <a
+              <Link
                 key={p.id}
                 href={`/products/${p.id}`}
                 className="bg-green-600 text-white px-4 py-3 rounded-lg hover:bg-green-700 transition-colors text-sm"
               >
                 查看 {p.name}
-              </a>
+              </Link>
             ))}
         </div>
       </div>
