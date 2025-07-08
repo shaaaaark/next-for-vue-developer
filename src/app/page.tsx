@@ -504,7 +504,7 @@ app.use(router)`}
                 <p className="text-blue-700 text-sm mb-3">
                   想要体验完整的全局状态管理？访问独立的演示页面：
                 </p>
-                <div className="flex gap-3">
+                <div className="flex flex-wrap gap-3">
                   <a 
                     href="/state-management" 
                     className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
@@ -515,7 +515,13 @@ app.use(router)`}
                     href="/scroll-demo" 
                     className="inline-block bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors"
                   >
-                    全局滚动演示 →
+                    自定义滚动演示 →
+                  </a>
+                  <a 
+                    href="/third-party-scroll" 
+                    className="inline-block bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors"
+                  >
+                    第三方库演示 →
                   </a>
                 </div>
               </div>
