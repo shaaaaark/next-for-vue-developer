@@ -105,18 +105,18 @@ export default function ProductsPage() {
         </div>
         
         <div className="text-center">
-          <a 
+          <Link
             href="/" 
             className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors inline-block mr-4"
           >
             返回首页
-          </a>
-          <a 
+          </Link>
+          <Link
             href="/about" 
             className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors inline-block"
           >
             关于页面
-          </a>
+          </Link>
         </div>
       </div>
     </div>

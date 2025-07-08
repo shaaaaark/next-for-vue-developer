@@ -1,7 +1,8 @@
 "use client";
 
-import Image from "next/image";
+
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import StateDemo from '@/components/StateDemo';
 import ConditionalAndListDemo from '@/components/ConditionalAndListDemo';
 import ComponentCommunicationDemo from '@/components/ComponentCommunicationDemo';
@@ -32,16 +33,7 @@ export default function Home() {
   const subtitle = "Hello, Vue开发者！";
   const currentDate = new Date().toLocaleDateString('zh-CN');
   
-  // 演示用的用户数据 - 注意这里的类型会被TSX检查
-  const demoUser = {
-    name: "Vue开发者小明",
-    age: 28,
-    isVueUser: true
-  };
-  
-  const handleButtonClick = () => {
-    alert("这就是TypeScript + React的事件处理！");
-  };
+
 
   // 滚动到指定部分
   const scrollToSection = (sectionId: string) => {
@@ -265,7 +257,7 @@ app.use(router)`}
                   现在试试这些路由页面
                 </h3>
                 <div className="grid md:grid-cols-3 gap-4">
-                  <a 
+                  <Link 
                     href="/about" 
                     className="block p-4 bg-white rounded-lg hover:bg-gray-100 transition-colors text-center border border-gray-200"
                   >
@@ -274,9 +266,9 @@ app.use(router)`}
                     </h4>
                     <p className="text-sm text-gray-600 mt-1">/about</p>
                     <p className="text-xs text-gray-500 mt-1">基础路由演示</p>
-                  </a>
+                  </Link>
                   
-                  <a 
+                  <Link 
                     href="/products" 
                     className="block p-4 bg-white rounded-lg hover:bg-gray-100 transition-colors text-center border border-gray-200"
                   >
@@ -285,9 +277,9 @@ app.use(router)`}
                     </h4>
                     <p className="text-sm text-gray-600 mt-1">/products</p>
                     <p className="text-xs text-gray-500 mt-1">列表页面 + Link组件</p>
-                  </a>
+                  </Link>
                   
-                  <a 
+                  <Link 
                     href="/products/1" 
                     className="block p-4 bg-white rounded-lg hover:bg-gray-100 transition-colors text-center border border-gray-200"
                   >
@@ -296,7 +288,7 @@ app.use(router)`}
                     </h4>
                     <p className="text-sm text-gray-600 mt-1">/products/[id]</p>
                     <p className="text-xs text-gray-500 mt-1">动态路由演示</p>
-                  </a>
+                  </Link>
                 </div>
               </div>
               
@@ -346,12 +338,12 @@ app.use(router)`}
                     <p>• 用户会看到明显的加载状态</p>
                     <p>• 与Vue的开发体验类似</p>
                   </div>
-                  <a 
+                  <Link 
                     href="/blog-csr" 
                     className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
                   >
                     体验CSR演示 →
-                  </a>
+                  </Link>
                 </div>
                 
                 <div className="bg-white p-6 rounded-lg border border-gray-200">
@@ -366,12 +358,12 @@ app.use(router)`}
                     <p>• 首屏更快，SEO友好</p>
                     <p>• Vue需要Nuxt.js才有类似功能</p>
                   </div>
-                  <a 
+                  <Link 
                     href="/blog-ssr" 
                     className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
                   >
                     体验SSR演示 →
-                  </a>
+                  </Link>
                 </div>
                 
                 <div className="bg-white p-6 rounded-lg border border-gray-200">
@@ -386,12 +378,12 @@ app.use(router)`}
                     <p>• 访问速度最快，CDN友好</p>
                     <p>• Vue生态中较少见的特性</p>
                   </div>
-                  <a 
+                  <Link 
                     href="/blog-ssg" 
                     className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
                   >
                     体验SSG演示 →
-                  </a>
+                  </Link>
                 </div>
               </div>
               
@@ -465,12 +457,12 @@ app.use(router)`}
                 <p className="text-blue-700 text-sm mb-3">
                   想要体验完整的表单处理流程？访问独立的表单演示页面：
                 </p>
-                <a 
+                <Link 
                   href="/forms" 
                   className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
                 >
                   访问表单演示页面 →
-                </a>
+                </Link>
               </div>
             </div>
           </section>
@@ -505,24 +497,24 @@ app.use(router)`}
                   想要体验完整的全局状态管理？访问独立的演示页面：
                 </p>
                 <div className="flex flex-wrap gap-3">
-                  <a 
+                  <Link 
                     href="/state-management" 
                     className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
                   >
                     状态管理演示 →
-                  </a>
-                  <a 
+                  </Link>
+                  <Link 
                     href="/scroll-demo" 
                     className="inline-block bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors"
                   >
                     自定义滚动演示 →
-                  </a>
-                  <a 
+                  </Link>
+                  <Link 
                     href="/third-party-scroll" 
                     className="inline-block bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors"
                   >
                     第三方库演示 →
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -1,7 +1,6 @@
 'use client';
 
 import { useGlobalScrollRestore, useScrollPositionManager } from '@/hooks/useGlobalScrollRestore';
-import { useGlobalStore } from '@/store/global-store';
 
 interface GlobalScrollManagerProps {
   children: React.ReactNode;
@@ -14,9 +13,6 @@ export default function GlobalScrollManager({
 }: GlobalScrollManagerProps) {
   // 使用全局滚动恢复Hook
   useGlobalScrollRestore(enabled);
-
-  // 可选：与Zustand状态管理集成
-  const { saveViewportPosition } = useGlobalStore();
 
   // 组件本身不渲染任何UI，只提供滚动管理功能
   return <>{children}</>;

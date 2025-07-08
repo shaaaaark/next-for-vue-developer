@@ -30,8 +30,7 @@ const userSchema = baseUserSchema.refine((data) => data.password === data.confir
   path: ['confirmPassword'],
 });
 
-// 类型推导
-type UserFormData = z.infer<typeof userSchema>;
+// 类型推导（已移除未使用的 UserFormData）
 
 export default function FormValidationDemo() {
   const [clientErrors, setClientErrors] = useState<Record<string, string>>({});
@@ -45,7 +44,7 @@ export default function FormValidationDemo() {
   });
 
   // 客户端实时验证
-  const validateField = (name: string, value: any) => {
+  const validateField = (name: string, value: string | number) => {
     try {
       if (name === 'age') {
         value = Number(value);

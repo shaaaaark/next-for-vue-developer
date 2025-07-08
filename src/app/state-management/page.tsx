@@ -1,6 +1,6 @@
 import GlobalStateDemo from '@/components/GlobalStateDemo';
 import ViewportPositionDemo from '@/components/ViewportPositionDemo';
-
+import Link from 'next/link';
 export default function StateManagementPage() {
   return (
     <div className="min-h-screen bg-gray-50 py-12">
@@ -92,19 +92,19 @@ export default function StateManagementPage() {
 
         {/* 导航链接 */}
         <div className="flex justify-between items-center mt-12 pt-8 border-t border-gray-200">
-          <a
+          <Link
             href="/forms"
             className="flex items-center gap-2 px-6 py-3 text-gray-600 hover:text-blue-600 transition-colors"
           >
             ← 上一章：表单处理
-          </a>
+          </Link>
           
-          <a
+          <Link
             href="/"
             className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
           >
             返回首页
-          </a>
+          </Link>
         </div>
       </div>
     </div>

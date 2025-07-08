@@ -101,7 +101,7 @@ export function useGlobalScrollRestore(enabled: boolean = true) {
   useEffect(() => {
     if (!enabled) return;
     restoreScrollPosition();
-  }, [pathname, enabled]);
+  }, [pathname, enabled, restoreScrollPosition]);
 
   // 监听滚动和页面卸载事件
   useEffect(() => {
@@ -134,7 +134,7 @@ export function useGlobalScrollRestore(enabled: boolean = true) {
       window.removeEventListener('beforeunload', handleBeforeUnload);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
-  }, [pathname, enabled]);
+  }, [pathname, enabled, saveScrollPosition]);
 
   return {
     saveScrollPosition,

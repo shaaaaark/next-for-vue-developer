@@ -1,6 +1,7 @@
 import FormBasicsDemo from '@/components/FormBasicsDemo';
 import ServerActionsDemo from '@/components/ServerActionsDemo';
 import FormValidationDemo from '@/components/FormValidationDemo';
+import Link from 'next/link';
 
 export default function FormsPage() {
   return (
@@ -72,12 +73,12 @@ export default function FormsPage() {
         </div>
         
         <div className="mt-6 text-center">
-          <a 
+          <Link
             href="/" 
             className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
           >
             ← 返回主学习页面
-          </a>
+          </Link>
         </div>
       </div>
     </div>

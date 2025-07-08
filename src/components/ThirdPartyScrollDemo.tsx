@@ -48,14 +48,14 @@ export default function ThirdPartyScrollDemo() {
   // 页面加载时恢复
   useEffect(() => {
     setTimeout(restorePosition, 100);
-  }, [pathname]);
+  }, [pathname, restorePosition]);
 
   // 页面卸载时保存
   useEffect(() => {
     const handleBeforeUnload = () => savePosition();
     window.addEventListener('beforeunload', handleBeforeUnload);
     return () => window.removeEventListener('beforeunload', handleBeforeUnload);
-  }, [scrollX, scrollY, pathname]);
+  }, [scrollX, scrollY, pathname, savePosition]);
 
   return (
     <div className="space-y-8">

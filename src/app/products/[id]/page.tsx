@@ -1,6 +1,6 @@
 // 这是Next.js的动态路由页面！
 // 文件名 [id] 表示这是一个动态参数
-
+import Link from 'next/link';
 interface ProductDetailPageProps {
   params: {
     id: string;
@@ -26,12 +26,12 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
         <div className="bg-white rounded-lg shadow-lg p-8 text-center">
           <h1 className="text-3xl font-bold mb-4 text-red-600">产品未找到</h1>
           <p className="text-gray-600 mb-6">产品ID {params.id} 不存在</p>
-          <a 
+          <Link
             href="/products" 
             className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors inline-block"
           >
             返回产品列表
-          </a>
+          </Link>
         </div>
       </div>
     );
@@ -133,18 +133,18 @@ export default function Page({ params }) {
 
         {/* 导航按钮 */}
         <div className="flex flex-wrap gap-4 justify-center">
-          <a 
+          <Link
             href="/products" 
             className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
           >
             ← 返回产品列表
-          </a>
-          <a 
+          </Link>
+          <Link
             href="/" 
             className="bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition-colors"
           >
             返回首页
-          </a>
+          </Link>
           
           {/* 展示其他产品的链接 */}
           {products

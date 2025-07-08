@@ -61,7 +61,7 @@ export async function GET() {
       data: posts,
       total: posts.length
     })
-  } catch (error) {
+  } catch (_error) {
     return NextResponse.json(
       { 
         success: false, 
@@ -107,7 +107,7 @@ export async function POST(request: Request) {
       success: true,
       data: newPost
     }, { status: 201 })
-  } catch (error) {
+  } catch (_error) {
     return NextResponse.json(
       { 
         success: false, 

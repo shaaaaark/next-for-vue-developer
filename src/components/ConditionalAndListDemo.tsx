@@ -25,7 +25,7 @@ export default function ConditionalAndListDemo() {
     { id: 2, text: '学习React', completed: false },
     { id: 3, text: '学习Next.js', completed: false },
   ]);
-  const [users, setUsers] = useState<User[]>([
+  const [users] = useState<User[]>([
     { id: 1, name: '张三', age: 25, isVip: true },
     { id: 2, name: '李四', age: 30, isVip: false },
     { id: 3, name: '王五', age: 28, isVip: true },

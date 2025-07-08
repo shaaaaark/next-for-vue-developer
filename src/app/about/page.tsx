@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function AboutPage() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
@@ -73,18 +74,18 @@ export default function About() {
         </div>
         
         <div className="text-center">
-          <a 
+          <Link
             href="/" 
             className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors inline-block mr-4"
           >
             返回首页
-          </a>
-          <a 
+          </Link>
+          <Link
             href="/products" 
             className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors inline-block"
           >
             查看产品页面
-          </a>
+          </Link>
         </div>
       </div>
     </div>

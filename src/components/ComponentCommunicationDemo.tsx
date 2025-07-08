@@ -103,7 +103,7 @@ export default function ComponentCommunicationDemo() {
       console.log('父组件卸载清理')
       document.title = 'Next.js学习'
     }
-  }, [])
+  }, [count])
   
   // 监听count变化并更新页面标题 - 相当于Vue的watch
   useEffect(() => {
