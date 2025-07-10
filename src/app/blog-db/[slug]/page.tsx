@@ -179,7 +179,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
         {/* 文章内容 */}
         <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
-          <MarkdownContent content={post.content} />
+          <MarkdownContent content={post.content || '暂无内容'} />
         </div>
 
         {/* 评论区 */}
