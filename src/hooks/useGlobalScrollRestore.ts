@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
 
 interface ScrollPosition {
@@ -17,7 +17,7 @@ export function useGlobalScrollRestore(enabled: boolean = true) {
   const pathname = usePathname();
 
   // 保存滚动位置
-  const saveScrollPosition = () => {
+  const saveScrollPosition = useCallback(() => {
     if (typeof window === 'undefined' || !enabled) return;
 
     const currentPosition: ScrollPosition = {
@@ -49,10 +49,10 @@ export function useGlobalScrollRestore(enabled: boolean = true) {
     } catch (error) {
       console.warn('Failed to save scroll position:', error);
     }
-  };
+  }, [pathname, enabled]);
 
   // 恢复滚动位置
-  const restoreScrollPosition = () => {
+  const restoreScrollPosition = useCallback(() => {
     if (typeof window === 'undefined' || !enabled) return;
 
     try {
@@ -76,7 +76,7 @@ export function useGlobalScrollRestore(enabled: boolean = true) {
     } catch (error) {
       console.warn('Failed to restore scroll position:', error);
     }
-  };
+  }, [pathname, enabled]);
 
   // 清除指定页面的滚动位置
   const clearScrollPosition = (targetPathname?: string) => {

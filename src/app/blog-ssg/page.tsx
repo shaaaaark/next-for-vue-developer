@@ -12,68 +12,57 @@ interface BlogPost {
   tags: string[]
 }
 
-interface ApiResponse {
-  success: boolean
-  data: BlogPost[]
-  total: number
-}
+// interface ApiResponse {
+//   success: boolean
+//   data: BlogPost[]
+//   total: number
+// }
 
 // 静态数据获取函数
 async function getStaticPosts(): Promise<BlogPost[]> {
   console.log('🏗️ 构建时获取数据...')
   const buildTime = Date.now()
   
-  try {
-    // 在构建时调用API获取数据
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/posts`, {
-      // 强制缓存，因为这是静态生成
-      cache: 'force-cache'
-    })
-    
-    if (!response.ok) {
-      throw new Error('获取文章失败')
+  // 为了演示 SSG，直接使用静态数据
+  // 在真实项目中，你可以从外部 API、数据库或文件系统获取数据
+  const staticData = [
+    {
+      id: 1,
+      title: 'Vue到React的思维转换',
+      excerpt: '探讨Vue开发者如何快速适应React的开发模式',
+      slug: 'vue-to-react-mindset',
+      publishedAt: '2024-01-15',
+      author: '前端学习者',
+      viewCount: 1245,
+      tags: ['Vue', 'React', '学习心得']
+    },
+    {
+      id: 2,
+      title: 'Next.js的渲染策略深度解析',
+      excerpt: '深入理解Next.js的多种渲染策略及其应用场景',
+      slug: 'nextjs-rendering-strategies',
+      publishedAt: '2024-01-10',
+      author: '技术分享者',
+      viewCount: 2156,
+      tags: ['Next.js', 'SSR', 'SSG', '性能优化']
+    },
+    {
+      id: 3,
+      title: 'TypeScript在React中的最佳实践',
+      excerpt: '分享React+TypeScript开发中的实用技巧和模式',
+      slug: 'typescript-react-best-practices',
+      publishedAt: '2024-01-05',
+      author: '类型安全守护者',
+      viewCount: 892,
+      tags: ['TypeScript', 'React', '最佳实践']
     }
-    
-    const result: ApiResponse = await response.json()
-    console.log(`✅ 构建时数据获取成功，耗时: ${Date.now() - buildTime}ms`)
-    
-    return result.data
-  } catch (error) {
-    console.error('❌ 构建时数据获取失败:', error)
-    // 为了演示，返回模拟数据
-    return [
-      {
-        id: 1,
-        title: 'Vue到React的思维转换',
-        excerpt: '探讨Vue开发者如何快速适应React的开发模式',
-        slug: 'vue-to-react-mindset',
-        publishedAt: '2024-01-15',
-        author: '前端学习者',
-        viewCount: 1245,
-        tags: ['Vue', 'React', '学习心得']
-      },
-      {
-        id: 2,
-        title: 'Next.js的渲染策略深度解析',
-        excerpt: '深入理解Next.js的多种渲染策略及其应用场景',
-        slug: 'nextjs-rendering-strategies',
-        publishedAt: '2024-01-10',
-        author: '技术分享者',
-        viewCount: 2156,
-        tags: ['Next.js', 'SSR', 'SSG', '性能优化']
-      },
-      {
-        id: 3,
-        title: 'TypeScript在React中的最佳实践',
-        excerpt: '分享React+TypeScript开发中的实用技巧和模式',
-        slug: 'typescript-react-best-practices',
-        publishedAt: '2024-01-05',
-        author: '类型安全守护者',
-        viewCount: 892,
-        tags: ['TypeScript', 'React', '最佳实践']
-      }
-    ]
-  }
+  ]
+  
+  // 模拟异步数据获取
+  await new Promise(resolve => setTimeout(resolve, 100))
+  console.log(`✅ 构建时数据获取成功，耗时: ${Date.now() - buildTime}ms`)
+  
+  return staticData
 }
 
 // 静态生成组件

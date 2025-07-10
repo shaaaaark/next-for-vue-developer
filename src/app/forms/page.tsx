@@ -2,6 +2,7 @@ import FormBasicsDemo from '@/components/FormBasicsDemo';
 import ServerActionsDemo from '@/components/ServerActionsDemo';
 import FormValidationDemo from '@/components/FormValidationDemo';
 import Link from 'next/link';
+import { Suspense } from 'react';
 
 export default function FormsPage() {
   return (
@@ -41,7 +42,9 @@ export default function FormsPage() {
         <FormBasicsDemo />
         
         {/* Server Actions演示 */}
-        <ServerActionsDemo />
+        <Suspense fallback={<div>加载Server Actions演示...</div>}>
+          <ServerActionsDemo />
+        </Suspense>
         
         {/* 表单验证演示 */}
         <FormValidationDemo />

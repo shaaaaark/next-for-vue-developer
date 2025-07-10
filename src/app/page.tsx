@@ -1,7 +1,7 @@
 "use client";
 
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
 import StateDemo from '@/components/StateDemo';
 import ConditionalAndListDemo from '@/components/ConditionalAndListDemo';
@@ -446,7 +446,9 @@ app.use(router)`}
               
               <div className="space-y-8">
                 <FormBasicsDemo />
-                <ServerActionsDemo />
+                <Suspense fallback={<div>加载Server Actions演示...</div>}>
+                  <ServerActionsDemo />
+                </Suspense>
                 <FormValidationDemo />
               </div>
               

@@ -1,7 +1,7 @@
 'use client';
 
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
@@ -28,22 +28,22 @@ export default function ThirdPartyScrollDemo() {
   );
 
   // 保存到localStorage
-  const savePosition = () => {
+  const savePosition = useCallback(() => {
     localStorage.setItem(`scroll-${pathname}`, JSON.stringify({
       x: scrollX,
       y: scrollY,
       timestamp: Date.now()
     }));
-  };
+  }, [pathname, scrollX, scrollY]);
 
   // 恢复位置
-  const restorePosition = () => {
+  const restorePosition = useCallback(() => {
     const saved = localStorage.getItem(`scroll-${pathname}`);
     if (saved) {
       const position = JSON.parse(saved);
       window.scrollTo(position.x, position.y);
     }
-  };
+  }, [pathname]);
 
   // 页面加载时恢复
   useEffect(() => {
