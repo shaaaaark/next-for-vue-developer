@@ -578,11 +578,17 @@ app.use(router)`}
                   ⚙️ 文章管理后台
                 </Link>
                 <Link 
-                  href="https://github.com/yourusername/nextjs_demo/blob/main/docs/10-database-integration-crud.md" 
+                  href="/docs" 
                   className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+                >
+                  📚 学习文档中心
+                </Link>
+                <Link 
+                  href="https://github.com/yourusername/nextjs_demo/blob/main/docs/10-database-integration-crud.md" 
+                  className="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors"
                   target="_blank"
                 >
-                  📖 学习文档
+                  📖 详细教程
                 </Link>
               </div>
               
