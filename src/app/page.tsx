@@ -126,12 +126,153 @@ export default function Home() {
                 今天是 {currentDate}，让我们开始学习React和Next.js吧！
               </p>
               
-              <div className="bg-blue-50 border-l-4 border-blue-600 p-4">
+              <div className="bg-blue-50 border-l-4 border-blue-600 p-4 mb-6">
                 <h3 className="font-semibold text-blue-800 mb-2">学习目标</h3>
                 <p className="text-blue-700">
                   通过对比Vue和React的差异，帮助Vue开发者快速上手Next.js开发。
                   我们将从基础语法开始，逐步深入到路由、状态管理、数据获取等核心概念。
                 </p>
+              </div>
+
+              {/* 快速功能导航 */}
+              <div className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-lg p-6">
+                <h3 className="text-xl font-semibold text-blue-900 mb-4 text-center">
+                  🚀 快速功能导航
+                </h3>
+                
+                {/* 核心功能 */}
+                <div className="mb-6">
+                  <h4 className="text-sm font-medium text-blue-800 mb-3 uppercase tracking-wide">核心功能</h4>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <Link 
+                      href="/blog-db" 
+                      className="group p-3 bg-white rounded-lg border border-blue-200 hover:border-blue-400 hover:shadow-md transition-all"
+                    >
+                      <div className="text-center">
+                        <div className="text-2xl mb-1">📚</div>
+                        <div className="text-sm font-medium text-gray-900">博客系统</div>
+                        <div className="text-xs text-gray-500">数据库驱动</div>
+                      </div>
+                    </Link>
+                    
+                    <Link 
+                      href="/docs" 
+                      className="group p-3 bg-white rounded-lg border border-green-200 hover:border-green-400 hover:shadow-md transition-all"
+                    >
+                      <div className="text-center">
+                        <div className="text-2xl mb-1">📖</div>
+                        <div className="text-sm font-medium text-gray-900">文档中心</div>
+                        <div className="text-xs text-gray-500">学习资料</div>
+                      </div>
+                    </Link>
+                    
+                    <Link 
+                      href="/admin/posts" 
+                      className="group p-3 bg-white rounded-lg border border-purple-200 hover:border-purple-400 hover:shadow-md transition-all"
+                    >
+                      <div className="text-center">
+                        <div className="text-2xl mb-1">⚙️</div>
+                        <div className="text-sm font-medium text-gray-900">管理后台</div>
+                        <div className="text-xs text-gray-500">CRUD操作</div>
+                      </div>
+                    </Link>
+                    
+                    <Link 
+                      href="/state-management" 
+                      className="group p-3 bg-white rounded-lg border border-orange-200 hover:border-orange-400 hover:shadow-md transition-all"
+                    >
+                      <div className="text-center">
+                        <div className="text-2xl mb-1">🔄</div>
+                        <div className="text-sm font-medium text-gray-900">状态管理</div>
+                        <div className="text-xs text-gray-500">Zustand</div>
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+
+                {/* 演示页面 */}
+                <div className="mb-6">
+                  <h4 className="text-sm font-medium text-blue-800 mb-3 uppercase tracking-wide">演示页面</h4>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    <Link 
+                      href="/blog-csr" 
+                      className="group p-3 bg-white rounded-lg border border-gray-200 hover:border-gray-400 hover:shadow-md transition-all"
+                    >
+                      <div className="text-center">
+                        <div className="text-lg mb-1">🔄</div>
+                        <div className="text-sm font-medium text-gray-900">CSR演示</div>
+                        <div className="text-xs text-gray-500">客户端渲染</div>
+                      </div>
+                    </Link>
+                    
+                    <Link 
+                      href="/blog-ssr" 
+                      className="group p-3 bg-white rounded-lg border border-gray-200 hover:border-gray-400 hover:shadow-md transition-all"
+                    >
+                      <div className="text-center">
+                        <div className="text-lg mb-1">⚡</div>
+                        <div className="text-sm font-medium text-gray-900">SSR演示</div>
+                        <div className="text-xs text-gray-500">服务端渲染</div>
+                      </div>
+                    </Link>
+                    
+                    <Link 
+                      href="/blog-ssg" 
+                      className="group p-3 bg-white rounded-lg border border-gray-200 hover:border-gray-400 hover:shadow-md transition-all"
+                    >
+                      <div className="text-center">
+                        <div className="text-lg mb-1">📄</div>
+                        <div className="text-sm font-medium text-gray-900">SSG演示</div>
+                        <div className="text-xs text-gray-500">静态生成</div>
+                      </div>
+                    </Link>
+                    
+                    <Link 
+                      href="/scroll-demo" 
+                      className="group p-3 bg-white rounded-lg border border-gray-200 hover:border-gray-400 hover:shadow-md transition-all"
+                    >
+                      <div className="text-center">
+                        <div className="text-lg mb-1">📜</div>
+                        <div className="text-sm font-medium text-gray-900">滚动演示</div>
+                        <div className="text-xs text-gray-500">自定义Hook</div>
+                      </div>
+                    </Link>
+                    
+                    <Link 
+                      href="/third-party-scroll" 
+                      className="group p-3 bg-white rounded-lg border border-gray-200 hover:border-gray-400 hover:shadow-md transition-all"
+                    >
+                      <div className="text-center">
+                        <div className="text-lg mb-1">📊</div>
+                        <div className="text-sm font-medium text-gray-900">第三方库</div>
+                        <div className="text-xs text-gray-500">scroll-memory</div>
+                      </div>
+                    </Link>
+                    
+                    <Link 
+                      href="/products" 
+                      className="group p-3 bg-white rounded-lg border border-gray-200 hover:border-gray-400 hover:shadow-md transition-all"
+                    >
+                      <div className="text-center">
+                        <div className="text-lg mb-1">🛍️</div>
+                        <div className="text-sm font-medium text-gray-900">产品页面</div>
+                        <div className="text-xs text-gray-500">动态路由</div>
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+
+                {/* 学习路径 */}
+                <div className="text-center">
+                  <h4 className="text-sm font-medium text-blue-800 mb-3 uppercase tracking-wide">推荐学习路径</h4>
+                  <div className="flex flex-wrap justify-center gap-2 text-sm">
+                    <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full">1. 基础语法对比</span>
+                    <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full">2. 状态管理</span>
+                    <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full">3. 路由系统</span>
+                    <span className="px-3 py-1 bg-orange-100 text-orange-800 rounded-full">4. 数据获取</span>
+                    <span className="px-3 py-1 bg-red-100 text-red-800 rounded-full">5. 全栈开发</span>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
@@ -140,13 +281,132 @@ export default function Home() {
           <section id="progress" className="mb-16">
             <div className="bg-white rounded-lg shadow-lg p-8">
               <h2 className="text-2xl font-bold mb-6 text-blue-600">
-                学习进度
+                学习进度追踪
               </h2>
               
-              <div className="bg-blue-50 border-l-4 border-blue-600 p-4">
-                <p className="text-blue-700">
-                  JSX/TSX语法 → 状态管理(useState) → 条件渲染和列表渲染 → 组件通信&生命周期 → Next.js路由系统 → 数据获取&渲染策略 → 表单处理 → <strong>全局状态管理</strong>
-                </p>
+              {/* 完成度统计 */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-center">
+                  <div className="text-3xl font-bold text-green-600">10/10</div>
+                  <div className="text-sm text-green-700">章节完成</div>
+                  <div className="text-xs text-green-600 mt-1">100% 进度</div>
+                </div>
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-center">
+                  <div className="text-3xl font-bold text-blue-600">15+</div>
+                  <div className="text-sm text-blue-700">实践项目</div>
+                  <div className="text-xs text-blue-600 mt-1">博客、管理、演示</div>
+                </div>
+                <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 text-center">
+                  <div className="text-3xl font-bold text-purple-600">7</div>
+                  <div className="text-sm text-purple-700">学习文档</div>
+                  <div className="text-xs text-purple-600 mt-1">完整教程资料</div>
+                </div>
+              </div>
+
+              {/* 学习路径可视化 */}
+              <div className="bg-gradient-to-r from-blue-50 to-green-50 border border-blue-200 rounded-lg p-6">
+                <h3 className="font-semibold text-blue-800 mb-4 text-center">🎯 完整学习路径</h3>
+                
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center text-sm font-bold">✓</div>
+                    <div className="flex-1">
+                      <div className="font-medium text-gray-900">第一章：JSX/TSX语法基础</div>
+                      <div className="text-sm text-gray-600">掌握React的模板语法，对比Vue的差异</div>
+                    </div>
+                    <span className="text-green-600 text-sm font-medium">已完成</span>
+                  </div>
+                  
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center text-sm font-bold">✓</div>
+                    <div className="flex-1">
+                      <div className="font-medium text-gray-900">第二章：React状态管理(useState)</div>
+                      <div className="text-sm text-gray-600">响应式数据处理，类似Vue的data</div>
+                    </div>
+                    <span className="text-green-600 text-sm font-medium">已完成</span>
+                  </div>
+
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center text-sm font-bold">✓</div>
+                    <div className="flex-1">
+                      <div className="font-medium text-gray-900">第三章：条件渲染和列表渲染</div>
+                      <div className="text-sm text-gray-600">JavaScript表达式控制UI显示</div>
+                    </div>
+                    <span className="text-green-600 text-sm font-medium">已完成</span>
+                  </div>
+
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center text-sm font-bold">✓</div>
+                    <div className="flex-1">
+                      <div className="font-medium text-gray-900">第四章：组件通信&生命周期</div>
+                      <div className="text-sm text-gray-600">props传递和useEffect钩子</div>
+                    </div>
+                    <span className="text-green-600 text-sm font-medium">已完成</span>
+                  </div>
+
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center text-sm font-bold">✓</div>
+                    <div className="flex-1">
+                      <div className="font-medium text-gray-900">第五章：Next.js文件系统路由</div>
+                      <div className="text-sm text-gray-600">零配置路由，对比Vue Router</div>
+                    </div>
+                    <span className="text-green-600 text-sm font-medium">已完成</span>
+                  </div>
+
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center text-sm font-bold">✓</div>
+                    <div className="flex-1">
+                      <div className="font-medium text-gray-900">第六章：数据获取&渲染策略</div>
+                      <div className="text-sm text-gray-600">CSR、SSR、SSG多种渲染模式</div>
+                    </div>
+                    <span className="text-green-600 text-sm font-medium">已完成</span>
+                  </div>
+
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center text-sm font-bold">✓</div>
+                    <div className="flex-1">
+                      <div className="font-medium text-gray-900">第七章：表单处理&验证</div>
+                      <div className="text-sm text-gray-600">Server Actions + Zod验证</div>
+                    </div>
+                    <span className="text-green-600 text-sm font-medium">已完成</span>
+                  </div>
+
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center text-sm font-bold">✓</div>
+                    <div className="flex-1">
+                      <div className="font-medium text-gray-900">第八章：全局状态管理</div>
+                      <div className="text-sm text-gray-600">Zustand状态管理和持久化</div>
+                    </div>
+                    <span className="text-green-600 text-sm font-medium">已完成</span>
+                  </div>
+
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center text-sm font-bold">✓</div>
+                    <div className="flex-1">
+                      <div className="font-medium text-gray-900">第九章：滚动管理&性能优化</div>
+                      <div className="text-sm text-gray-600">自定义Hook和第三方库</div>
+                    </div>
+                    <span className="text-green-600 text-sm font-medium">已完成</span>
+                  </div>
+
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center text-sm font-bold">✓</div>
+                    <div className="flex-1">
+                      <div className="font-medium text-gray-900">第十章：数据库集成&CRUD操作</div>
+                      <div className="text-sm text-gray-600">Prisma ORM + SQLite全栈开发</div>
+                    </div>
+                    <span className="text-green-600 text-sm font-medium">已完成</span>
+                  </div>
+                </div>
+
+                <div className="mt-6 p-4 bg-green-100 border border-green-300 rounded-lg">
+                  <div className="text-center">
+                    <div className="text-green-800 font-semibold mb-2">🎉 恭喜！学习路径已完成</div>
+                    <div className="text-green-700 text-sm">
+                      你已经掌握了从Vue到Next.js的完整转换，现在可以开始构建真正的全栈应用了！
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
@@ -633,53 +893,196 @@ app.use(router)`}
           
           {/* 学习总结 */}
           <section id="summary" className="mb-16">
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <h3 className="text-xl font-semibold mb-3 text-blue-600 text-center">
-                恭喜！你已经掌握了React/Next.js的核心概念
-              </h3>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
-                <div className="bg-gray-50 p-3 rounded border border-gray-200">
-                  <h4 className="font-medium text-blue-600">JSX/TSX</h4>
-                  <p className="text-sm text-gray-600">类型安全的模板语法</p>
+            <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg shadow-lg p-8 border border-green-200">
+              <div className="text-center mb-8">
+                <div className="text-6xl mb-4">🎉</div>
+                <h3 className="text-3xl font-bold text-green-600 mb-2">
+                  恭喜！Vue到Next.js转换之旅圆满完成！
+                </h3>
+                <p className="text-lg text-gray-700">
+                  你已经成功掌握了现代全栈React开发的完整技能栈
+                </p>
+              </div>
+
+              {/* 成就统计 */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div className="bg-white rounded-lg p-4 text-center border border-green-200 shadow-sm">
+                  <div className="text-2xl font-bold text-green-600">10+</div>
+                  <div className="text-sm text-green-700">核心概念</div>
+                  <div className="text-xs text-gray-500">全部掌握</div>
                 </div>
-                <div className="bg-gray-50 p-3 rounded border border-gray-200">
-                  <h4 className="font-medium text-blue-600">useState</h4>
-                  <p className="text-sm text-gray-600">响应式状态管理</p>
+                <div className="bg-white rounded-lg p-4 text-center border border-blue-200 shadow-sm">
+                  <div className="text-2xl font-bold text-blue-600">15+</div>
+                  <div className="text-sm text-blue-700">实践项目</div>
+                  <div className="text-xs text-gray-500">动手实操</div>
                 </div>
-                <div className="bg-gray-50 p-3 rounded border border-gray-200">
-                  <h4 className="font-medium text-blue-600">条件&列表渲染</h4>
-                  <p className="text-sm text-gray-600">JavaScript表达式控制UI</p>
+                <div className="bg-white rounded-lg p-4 text-center border border-purple-200 shadow-sm">
+                  <div className="text-2xl font-bold text-purple-600">7</div>
+                  <div className="text-sm text-purple-700">学习文档</div>
+                  <div className="text-xs text-gray-500">详细教程</div>
                 </div>
-                <div className="bg-gray-50 p-3 rounded border border-gray-200">
-                  <h4 className="font-medium text-blue-600">组件通信&生命周期</h4>
-                  <p className="text-sm text-gray-600">props/回调函数 + useEffect</p>
-                </div>
-                <div className="bg-gray-50 p-3 rounded border border-gray-200">
-                  <h4 className="font-medium text-blue-600">Next.js路由</h4>
-                  <p className="text-sm text-gray-600">文件系统路由</p>
-                </div>
-                <div className="bg-gray-50 p-3 rounded border border-gray-200">
-                  <h4 className="font-medium text-blue-600">数据获取</h4>
-                  <p className="text-sm text-gray-600">CSR/SSR/SSG多种策略</p>
-                </div>
-                <div className="bg-gray-50 p-3 rounded border border-gray-200">
-                  <h4 className="font-medium text-blue-600">表单处理</h4>
-                  <p className="text-sm text-gray-600">Server Actions + Zod验证</p>
-                </div>
-                <div className="bg-gray-50 p-3 rounded border border-gray-200">
-                  <h4 className="font-medium text-blue-600">全局状态管理</h4>
-                  <p className="text-sm text-gray-600">Zustand + 状态持久化</p>
+                <div className="bg-white rounded-lg p-4 text-center border border-orange-200 shadow-sm">
+                  <div className="text-2xl font-bold text-orange-600">100%</div>
+                  <div className="text-sm text-orange-700">完成进度</div>
+                  <div className="text-xs text-gray-500">圆满结束</div>
                 </div>
               </div>
-              <p className="text-gray-600 mb-4 text-center">
-                太棒了！你已经掌握了从React基础到Next.js全局状态管理的核心概念。
-                这包括了现代全栈开发的重要技能：Server Actions、类型安全验证、多种渲染策略、
-                全局状态管理和视口位置保存等。
-              </p>
-              <div className="text-center">
-                <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
-                  继续学习Next.js高级特性！
-                </button>
+
+              {/* 技能掌握清单 */}
+              <div className="bg-white rounded-lg p-6 mb-8 border border-gray-200">
+                <h4 className="text-xl font-semibold text-gray-800 mb-4 text-center">
+                  🎯 技能掌握清单
+                </h4>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <div className="flex items-center space-x-3 p-3 bg-green-50 rounded-lg border border-green-200">
+                    <div className="w-6 h-6 rounded-full bg-green-500 text-white flex items-center justify-center text-sm">✓</div>
+                    <div>
+                      <div className="font-medium text-gray-900">JSX/TSX语法</div>
+                      <div className="text-xs text-gray-600">类型安全的模板语法</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-3 p-3 bg-green-50 rounded-lg border border-green-200">
+                    <div className="w-6 h-6 rounded-full bg-green-500 text-white flex items-center justify-center text-sm">✓</div>
+                    <div>
+                      <div className="font-medium text-gray-900">React状态管理</div>
+                      <div className="text-xs text-gray-600">useState + useEffect</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-3 p-3 bg-green-50 rounded-lg border border-green-200">
+                    <div className="w-6 h-6 rounded-full bg-green-500 text-white flex items-center justify-center text-sm">✓</div>
+                    <div>
+                      <div className="font-medium text-gray-900">条件&列表渲染</div>
+                      <div className="text-xs text-gray-600">JavaScript表达式控制</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-3 p-3 bg-green-50 rounded-lg border border-green-200">
+                    <div className="w-6 h-6 rounded-full bg-green-500 text-white flex items-center justify-center text-sm">✓</div>
+                    <div>
+                      <div className="font-medium text-gray-900">组件通信</div>
+                      <div className="text-xs text-gray-600">props传递 + 回调函数</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-3 p-3 bg-green-50 rounded-lg border border-green-200">
+                    <div className="w-6 h-6 rounded-full bg-green-500 text-white flex items-center justify-center text-sm">✓</div>
+                    <div>
+                      <div className="font-medium text-gray-900">Next.js路由</div>
+                      <div className="text-xs text-gray-600">文件系统路由 + 动态路由</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-3 p-3 bg-green-50 rounded-lg border border-green-200">
+                    <div className="w-6 h-6 rounded-full bg-green-500 text-white flex items-center justify-center text-sm">✓</div>
+                    <div>
+                      <div className="font-medium text-gray-900">数据获取策略</div>
+                      <div className="text-xs text-gray-600">CSR + SSR + SSG</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-3 p-3 bg-green-50 rounded-lg border border-green-200">
+                    <div className="w-6 h-6 rounded-full bg-green-500 text-white flex items-center justify-center text-sm">✓</div>
+                    <div>
+                      <div className="font-medium text-gray-900">表单处理</div>
+                      <div className="text-xs text-gray-600">Server Actions + Zod验证</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-3 p-3 bg-green-50 rounded-lg border border-green-200">
+                    <div className="w-6 h-6 rounded-full bg-green-500 text-white flex items-center justify-center text-sm">✓</div>
+                    <div>
+                      <div className="font-medium text-gray-900">全局状态管理</div>
+                      <div className="text-xs text-gray-600">Zustand + 持久化</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-3 p-3 bg-green-50 rounded-lg border border-green-200">
+                    <div className="w-6 h-6 rounded-full bg-green-500 text-white flex items-center justify-center text-sm">✓</div>
+                    <div>
+                      <div className="font-medium text-gray-900">数据库集成</div>
+                      <div className="text-xs text-gray-600">Prisma ORM + SQLite</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 转换对比总结 */}
+              <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg p-6 mb-8 border border-yellow-200">
+                <h4 className="text-xl font-semibold text-orange-800 mb-4 text-center">
+                  🔄 Vue → Next.js 转换收获
+                </h4>
+                <div className="grid md:grid-cols-2 gap-6 text-sm">
+                  <div>
+                    <h5 className="font-medium text-orange-700 mb-3">从Vue学到的经验依然有用：</h5>
+                    <ul className="space-y-2 text-orange-600">
+                      <li>• 组件化思维 → React组件设计</li>
+                      <li>• 响应式数据 → useState状态管理</li>
+                      <li>• 生命周期 → useEffect钩子</li>
+                      <li>• 指令式渲染 → JSX表达式</li>
+                      <li>• 路由概念 → Next.js文件路由</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 className="font-medium text-orange-700 mb-3">Next.js带来的新优势：</h5>
+                    <ul className="space-y-2 text-orange-600">
+                      <li>• 零配置路由 → 开发效率提升</li>
+                      <li>• 多种渲染策略 → 性能和SEO优化</li>
+                      <li>• Server Actions → 全栈一体化</li>
+                      <li>• 类型安全 → 更好的开发体验</li>
+                      <li>• 自动优化 → 生产就绪的应用</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* 下一步学习建议 */}
+              <div className="bg-white rounded-lg p-6 border border-blue-200">
+                <h4 className="text-xl font-semibold text-blue-800 mb-4 text-center">
+                  🚀 下一步学习建议
+                </h4>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h5 className="font-medium text-blue-700 mb-3">深入Next.js生态：</h5>
+                    <ul className="space-y-2 text-sm text-blue-600">
+                      <li>• Next.js 15新特性探索</li>
+                      <li>• App Router高级用法</li>
+                      <li>• 中间件和API路由</li>
+                      <li>• 部署和优化策略</li>
+                      <li>• 微前端架构</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 className="font-medium text-blue-700 mb-3">扩展技术栈：</h5>
+                    <ul className="space-y-2 text-sm text-blue-600">
+                      <li>• PostgreSQL + Supabase</li>
+                      <li>• 用户认证和授权</li>
+                      <li>• 文件上传和CDN</li>
+                      <li>• 实时功能（WebSocket）</li>
+                      <li>• 测试和CI/CD</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* 行动按钮 */}
+              <div className="text-center mt-8">
+                <div className="flex flex-wrap justify-center gap-4">
+                  <Link 
+                    href="/blog-db" 
+                    className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+                  >
+                    🎯 体验完整博客系统
+                  </Link>
+                  <Link 
+                    href="/admin/posts" 
+                    className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors font-medium"
+                  >
+                    ⚙️ 体验管理后台
+                  </Link>
+                  <Link 
+                    href="/docs" 
+                    className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors font-medium"
+                  >
+                    📚 查看学习文档
+                  </Link>
+                </div>
+                <p className="text-sm text-gray-600 mt-4">
+                  现在你已经具备了现代全栈开发的完整技能，去构建属于你的下一个伟大项目吧！
+                </p>
               </div>
             </div>
           </section>
