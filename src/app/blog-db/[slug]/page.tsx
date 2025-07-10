@@ -155,10 +155,10 @@ export default async function BlogPostPage({ params }: PageProps) {
                 <div className="flex items-center">
                   <img 
                     src={post.author.avatar ? post.author.avatar : '/default-avatar.png'} 
-                    alt={post.author.name}
+                    alt={post.author.name || '用户头像'}
                     className="w-8 h-8 rounded-full mr-2"
                   />
-                  <span>{post.author.name}</span>
+                  <span>{post.author.name || '匿名用户'}</span>
                 </div>
                 <span>•</span>
                 <span>{new Date(post.createdAt).toLocaleDateString('zh-CN')}</span>
@@ -195,12 +195,12 @@ export default async function BlogPostPage({ params }: PageProps) {
                   <div className="flex items-start space-x-4">
                     <img 
                       src={comment.author.avatar ? comment.author.avatar : '/default-avatar.png'} 
-                      alt={comment.author.name}
+                      alt={comment.author.name || '用户头像'}
                       className="w-10 h-10 rounded-full"
                     />
                     <div className="flex-1">
                       <div className="flex items-center space-x-2 mb-2">
-                        <span className="font-semibold text-gray-900">{comment.author.name}</span>
+                        <span className="font-semibold text-gray-900">{comment.author.name || '匿名用户'}</span>
                         <span className="text-sm text-gray-500">
                           {new Date(comment.createdAt).toLocaleDateString('zh-CN')}
                         </span>
