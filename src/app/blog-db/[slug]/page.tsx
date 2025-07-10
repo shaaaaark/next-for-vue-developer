@@ -6,7 +6,7 @@ import { Metadata } from 'next'
 const prisma = new PrismaClient()
 
 interface PageProps {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
 async function getPost(slug: string) {
@@ -44,8 +44,9 @@ async function getPost(slug: string) {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params
   const post = await prisma.post.findUnique({
-    where: { slug: params.slug },
+    where: { slug },
     select: { title: true, excerpt: true }
   })
 
@@ -93,7 +94,8 @@ function MarkdownContent({ content }: { content: string }) {
 }
 
 export default async function BlogPostPage({ params }: PageProps) {
-  const post = await getPost(params.slug)
+  const { slug } = await params
+  const post = await getPost(slug)
 
   if (!post) {
     notFound()
