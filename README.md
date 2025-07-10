@@ -6,6 +6,8 @@
 
 这个项目旨在帮助有Vue开发经验的开发者系统学习Next.js。通过对比Vue和React/Next.js的异同，以代码实践驱动学习，逐步掌握Next.js的核心概念和最佳实践。
 
+**线上地址**：[nextjs-for-vue-developer](https://nextjs-for-vue-developer.vercel.app/)
+
 ## 🚀 快速开始
 
 ```bash

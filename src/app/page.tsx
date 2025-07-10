@@ -24,6 +24,7 @@ const navigationItems = [
   { id: 'data-fetching-demo', title: '数据获取' },
   { id: 'forms-demo', title: '表单处理' },
   { id: 'global-state-demo', title: '全局状态管理' },
+  { id: 'database-demo', title: '数据库集成&CRUD' },
   { id: 'summary', title: '学习总结' },
 ];
 
@@ -518,6 +519,108 @@ app.use(router)`}
                     第三方库演示 →
                   </Link>
                 </div>
+              </div>
+            </div>
+          </section>
+          
+          {/* 数据库集成与CRUD操作演示 */}
+          <section id="database-demo" className="mb-16">
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <h2 className="text-2xl font-bold mb-6 text-blue-600">
+                第九章：数据库集成与CRUD操作
+              </h2>
+              
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                <h3 className="font-semibold text-blue-800 mb-2">
+                  Prisma + SQLite - 现代全栈开发的完美组合
+                </h3>
+                <p className="text-blue-700 text-sm">
+                  体验完整的数据库驱动应用开发，学习Prisma ORM、Server Actions的数据操作、
+                  类型安全的数据查询，以及如何在Next.js中构建真正的全栈应用。
+                  这是从Vue分离式开发到Next.js一体化开发的重要跃升！
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
+                <div className="p-4 border rounded-lg">
+                  <h4 className="font-medium text-green-800 mb-2">🎯 技术栈特性</h4>
+                  <ul className="text-sm text-gray-600 space-y-1">
+                    <li>• Prisma ORM - 类型安全的数据操作</li>
+                    <li>• SQLite 数据库 - 零配置本地存储</li>
+                    <li>• Server Actions - 服务端表单处理</li>
+                    <li>• Zod验证 - 数据完整性保障</li>
+                    <li>• 关系查询 - 用户、文章、标签、评论</li>
+                  </ul>
+                </div>
+                <div className="p-4 border rounded-lg">
+                  <h4 className="font-medium text-blue-800 mb-2">🔄 CRUD 操作</h4>
+                  <ul className="text-sm text-gray-600 space-y-1">
+                    <li>• Create - 创建新文章和用户</li>
+                    <li>• Read - 复杂关系查询和数据展示</li>
+                    <li>• Update - 编辑文章和状态切换</li>
+                    <li>• Delete - 安全删除和级联操作</li>
+                    <li>• Search - 全文搜索和分页查询</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div className="flex flex-wrap gap-4 mb-6">
+                <Link 
+                  href="/blog-db" 
+                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                >
+                  🏠 数据库驱动博客
+                </Link>
+                <Link 
+                  href="/admin/posts" 
+                  className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+                >
+                  ⚙️ 文章管理后台
+                </Link>
+                <Link 
+                  href="https://github.com/yourusername/nextjs_demo/blob/main/docs/10-database-integration-crud.md" 
+                  className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+                  target="_blank"
+                >
+                  📖 学习文档
+                </Link>
+              </div>
+              
+              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
+                <h4 className="text-sm font-medium text-yellow-800 mb-2">💡 Vue vs Next.js 数据库集成对比</h4>
+                <div className="grid md:grid-cols-2 gap-4 text-sm">
+                  <div>
+                    <h5 className="font-medium text-yellow-700 mb-2">Vue 传统方式</h5>
+                    <ul className="text-yellow-600 space-y-1">
+                      <li>• 前后端分离架构</li>
+                      <li>• Express/Koa后端API</li>
+                      <li>• axios/fetch客户端请求</li>
+                      <li>• 需要手动类型同步</li>
+                      <li>• 复杂的状态管理</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 className="font-medium text-yellow-700 mb-2">Next.js 现代方式</h5>
+                    <ul className="text-yellow-600 space-y-1">
+                      <li>• 全栈一体化开发</li>
+                      <li>• Server Actions原生支持</li>
+                      <li>• 服务端直接数据库操作</li>
+                      <li>• 端到端类型安全</li>
+                      <li>• 自动缓存和重新验证</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                <h4 className="font-medium text-gray-800 mb-2">🚀 体验建议</h4>
+                <ol className="text-gray-700 space-y-2 text-sm">
+                  <li>1. <strong>浏览博客：</strong> 先访问博客首页，查看真实数据展示</li>
+                  <li>2. <strong>管理后台：</strong> 体验完整的文章管理功能</li>
+                  <li>3. <strong>CRUD操作：</strong> 创建、编辑、发布、删除文章</li>
+                  <li>4. <strong>查看代码：</strong> 阅读学习文档了解实现原理</li>
+                  <li>5. <strong>对比思考：</strong> 思考与Vue开发方式的差异</li>
+                </ol>
               </div>
             </div>
           </section>
