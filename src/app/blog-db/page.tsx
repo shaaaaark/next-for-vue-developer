@@ -1,6 +1,9 @@
 import { prisma } from '@/lib/prisma'
 import Link from 'next/link'
 
+// 强制动态渲染，避免构建时预渲染
+export const dynamic = 'force-dynamic'
+
 // 获取所有已发布的文章
 async function getPosts() {
   try {

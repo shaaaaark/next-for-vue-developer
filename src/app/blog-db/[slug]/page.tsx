@@ -3,6 +3,9 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { Metadata } from 'next'
 
+// 强制动态渲染，避免构建时预渲染
+export const dynamic = 'force-dynamic'
+
 const prisma = new PrismaClient()
 
 interface PageProps {

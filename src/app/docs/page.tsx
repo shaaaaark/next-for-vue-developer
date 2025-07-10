@@ -1,6 +1,9 @@
 import { PrismaClient } from '@prisma/client'
 import Link from 'next/link'
 
+// 强制动态渲染，避免构建时预渲染
+export const dynamic = 'force-dynamic'
+
 const prisma = new PrismaClient()
 
 async function getDocsPosts() {
